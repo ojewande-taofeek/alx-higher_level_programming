@@ -5,8 +5,7 @@
 - [Python programming](https://intranet.alxswe.com/concepts/550)
 
 ## Author’s disclaimer
-`
-*Welcome to the Python world!
+> Welcome to the Python world!
 
 The first projects are more "C-oriented" - no tricks, no funky syntax - simple!
 If you've already played with Python, don't worry, fun things will come.
@@ -15,18 +14,18 @@ Like C, Python also has a linter / style guide like Betty, called PEP8, also now
 
 Enjoy!
 
-- Guillaume*
-`
+- Guillaume
+
 ## Resources
 **Read or watch:**
 
-[The Python tutorial (*only the first three chapters below*)](https://intranet.alxswe.com/rltoken/JsFCs_NBzMAR7-XPAZ9BoA)
-[Whetting Your Appetite](https://intranet.alxswe.com/rltoken/kifRlLG2iMX5AZiW8lrCMg)
-[Using the Python Interpreter](https://intranet.alxswe.com/rltoken/RVpfAuagCo9SdfYeoHd6jg)
-[An Informal Introduction to Python (*Read up until “3.1.2. Strings” included*)](https://intranet.alxswe.com/rltoken/bVps0ZPWq7qVZ7vc-eJGTw)
-[How To Use String Formatters in Python 3](https://intranet.alxswe.com/rltoken/Ju0J8BxkuPX5yKZctyKfsQ)
-[Learn to Program](https://intranet.alxswe.com/rltoken/szBsJ-Qyig_RrImN7RGlOg)
-[Pycodestyle – Style Guide for Python Code](https://intranet.alxswe.com/rltoken/tgYt-0zVy1T4sDlE9ohxnA)
+- [The Python tutorial (*only the first three chapters below*)](https://intranet.alxswe.com/rltoken/JsFCs_NBzMAR7-XPAZ9BoA)
+- [Whetting Your Appetite](https://intranet.alxswe.com/rltoken/kifRlLG2iMX5AZiW8lrCMg)
+- [Using the Python Interpreter](https://intranet.alxswe.com/rltoken/RVpfAuagCo9SdfYeoHd6jg)
+- [An Informal Introduction to Python (*Read up until “3.1.2. Strings” included*)](https://intranet.alxswe.com/rltoken/bVps0ZPWq7qVZ7vc-eJGTw)
+- [How To Use String Formatters in Python 3](https://intranet.alxswe.com/rltoken/Ju0J8BxkuPX5yKZctyKfsQ)
+- [Learn to Program](https://intranet.alxswe.com/rltoken/szBsJ-Qyig_RrImN7RGlOg)
+- [Pycodestyle – Style Guide for Python Code](https://intranet.alxswe.com/rltoken/tgYt-0zVy1T4sDlE9ohxnA)
 
 ## Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, **without the help of Google:**
