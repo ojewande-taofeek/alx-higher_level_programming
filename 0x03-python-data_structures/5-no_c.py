@@ -9,3 +9,4 @@ def no_c(my_string):
             else:
                 new_str = new_str + char
         return new_str
+    return my_string
