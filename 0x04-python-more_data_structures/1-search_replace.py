@@ -3,7 +3,7 @@ def search_replace(my_list, search, replace):
     """ function that replaces all occurrences of an element
         by another in a new list
     """
-    if my_list:
+    if my_list and search and replace:
         new_list = []
         for x in my_list:
             if x == search:
