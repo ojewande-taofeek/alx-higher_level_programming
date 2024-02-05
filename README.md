@@ -8,4 +8,5 @@ The repo contains the underlisted projects:
 - 0x02. Python - import & modules
 - 0x03-python-data_structures
 - 0x04-python-more_data_structures
-- 0x17-doubly_linked_lists
+- 0x05. Python - Exceptions
+
