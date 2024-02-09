@@ -9,4 +9,4 @@ The repo contains the underlisted projects:
 - 0x03-python-data_structures
 - 0x04-python-more_data_structures
 - 0x05. Python - Exceptions
-
+- 0x06-python-classes
