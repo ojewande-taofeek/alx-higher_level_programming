@@ -1,0 +1,60 @@
+This contains test for 0-add_interger.py
+
+import the function 
+>>> add_integer = __import__('0-add_integer').add_integer
+
+one argument
+>>> add_integer(1)
+99
+
+two int argumeents
+>>> add_integer(1, 2)
+3
+
+three arguments
+>>> add_integer(1, 2, 4)
+Traceback (most recent call last):
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+>>> add_integer(1, "str")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer("str", 2)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(1.5, 1)
+2
+
+>>> add_integer(1, 1.5)
+2
+
+>>> add_integer(1.5)
+99
+
+>>> add_integer(1.5, 7.5)
+8
+
+>>> add_integer(1.5, "str")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+
+>>> add_integer("str", 1.5)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+Negative values
+
+>>> add_integer(-4, -2)
+-6
+
+>>> add_integer(-3, 7)
+4
+
+>>> add_integer(-3)
+95
+
+>>> add_integer(-3.2, 5)
+2
