@@ -58,3 +58,11 @@ Negative values
 
 >>> add_integer(-3.2, 5)
 2
+
+>>> add_integer(100, -2)
+98
+>>> add_integer(100.3, -2)
+98
+
+>>> add_integer(None)
+TypeError: a must be an integer
