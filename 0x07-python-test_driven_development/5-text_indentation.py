@@ -21,7 +21,7 @@ def text_indentation(text):
         if word == "." or word == "?" or word == ":":
             pun = word
             print("{}\n".format(word))
-        elif pun:
+        elif pun and word == " ":
             pun = None
             continue
         else:
