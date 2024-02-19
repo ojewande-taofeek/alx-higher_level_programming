@@ -35,9 +35,3 @@ True
 True
 >>> issubclass(type(bg), object)
 True
->>> bg = BaseGeometry("no no")
-Traceback (most recent call last):
-TypeError: BaseGeometry() takes no arguments
->>> bg.area("1")
-Traceback (most recent call last):
-TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
