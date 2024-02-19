@@ -26,3 +26,15 @@ True
 <7-base_geometry.BaseGeometry object at 0x...
 >>> issubclass(BaseGeometry, object)
 True
+>>> bg.integer_validator("my_int", "name")
+Traceback (most recent call last):
+TypeError: my_int must be an integer
+>>> bg.integer_validator("my_int")
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+>>> bg.integer_validator()
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+>>> bg.integer_validator("name", 12, "no")
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
