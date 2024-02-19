@@ -36,3 +36,9 @@ True
 [-4, -5, -7, -1]
 >>> my_list.print_sorted()
 [-7, -5, -4, -1]
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list
+[1]
+>>> my_list.print_sorted()
+[1]
