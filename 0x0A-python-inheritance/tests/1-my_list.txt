@@ -9,6 +9,8 @@ True
 
 >>> isinstance(my_list, list)
 True
+>>> issubclass(MyList, list)
+True
 
 >>> type(my_list)
 <class '1-my_list.MyList'>
@@ -20,6 +22,8 @@ True
 [1, 5, 3]
 >>> my_list.print_sorted()
 [1, 3, 5]
+>>> my_list
+[1, 5, 3]
 >>> my_list.append(-4)
 >>> my_list.print_sorted()
 [-4, 1, 3, 5]
