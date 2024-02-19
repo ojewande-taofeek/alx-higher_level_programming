@@ -1,0 +1,28 @@
+Doctest for task 7
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("my_int", -12)
+Traceback (most recent call last):
+ValueError: my_int must be greater than 0
+>>> bg.integer_validator("my_int", 0)
+Traceback (most recent call last):
+ValueError: my_int must be greater than 0
+>>> bg.integer_validator("my_int", True)
+Traceback (most recent call last):
+TypeError: my_int must be an integer
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+>>> isinstance(bg, BaseGeometry)
+True
+>>> type(bg)
+<class '7-base_geometry.BaseGeometry'>
+>>> issubclass(type(bg), BaseGeometry)
+True
+>>> bg #doctest: +ELLIPSIS
+<7-base_geometry.BaseGeometry object at 0x...
+>>> issubclass(BaseGeometry, object)
+True
