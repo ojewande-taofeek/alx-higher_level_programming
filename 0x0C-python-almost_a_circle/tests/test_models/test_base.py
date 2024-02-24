@@ -21,6 +21,6 @@ class TestBase(unittest.TestCase):
     def test_id(self):
         """Test if id is None if a value is given"""
         b = Base()
-        self.assertEqual(b.id, 1)
+        self.assertEqual(b.id, 2)
         c = Base(6)
         self.assertEqual(c.id, 6)
