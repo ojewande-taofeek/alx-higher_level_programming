@@ -166,3 +166,19 @@ class Rectangle(Base):
                         continue
                 except IndexError:
                     self.y = value
+
+    def to_dictionary(self):
+        """Returns a Rectangle instance dict"""
+        new_dict = dict()
+        for key, value in self.__dict__.items():
+            if key.endswith("width"):
+                new_dict["width"] = value
+            elif key.endswith("height"):
+                new_dict["height"] = value
+            elif key.endswith("id"):
+                new_dict["id"] = value
+            elif key.endswith("x"):
+                new_dict["x"] = value
+            elif key.endswith("y"):
+                new_dict["y"] = value
+        return new_dict

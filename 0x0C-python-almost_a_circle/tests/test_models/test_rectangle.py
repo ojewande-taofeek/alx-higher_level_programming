@@ -168,3 +168,12 @@ class TestRectangle(unittest.TestCase):
             print(r1)
             output = buffer.getvalue().strip()
             self.assertEqual(expected_output, output)
+
+    def test_dictionary(self):
+        """Test the to_dictionary method"""
+        rec = Rectangle(2, 3, 7, 9, 21)
+        expected = {'id': 21, 'width': 2, 'height': 3, 'x': 7, 'y': 9}
+        output = rec.to_dictionary()
+        self.assertDictEqual(expected, output)
+
+        self.assertTrue(issubclass(type(output), dict))
