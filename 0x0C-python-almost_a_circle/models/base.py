@@ -39,9 +39,61 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """Return JSON string representation of list_dictionaries"""
         if type(list_dictionaries) is list or list_dictionaries is None:
             if list_dictionaries is None:
                 list_dictionaries = []
             return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """writes the JSON string representation of list_objs to a file"""
+        new_list = list()
+        if list_objs:
+            for i in list_objs:
+                list_dict = cls.to_dictionary(i)
+                new_list.append(list_dict)
+        elif list_objs is None:
+            new_list = []
+        list_dict_json = cls.to_json_string(new_list)
+        filename = str(cls.__name__) + ".json"
+        with open(filename, "w", encoding="utf-8") as new_file:
+            new_file.write(list_dict_json)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the list of the JSON string representation json_string"""
+        if json_string is None:
+            return "[]"
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
+        if type(dictionary) is dict:
+            if cls.__name__ == "Rectangle":
+                rec = cls(3, 4)
+                cls.update(rec, **dictionary)
+                return rec
+            elif cls.__name__ == "Square":
+                squ = cls(4)
+                cls.update(squ, **dictionary)
+                return squ
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        filename = str(cls.__name__) + ".json"
+        instance_list = list()
+        try:
+            with open(filename, "r", encoding="utf-8") as new_file:
+                list_dicts_str = new_file.read()
+                list_dicts = cls.from_json_string(list_dicts_str)
+                for each_dict in list_dicts:
+                    new_instance = cls.create(**each_dict)
+                    instance_list.append(new_instance)
+            return instance_list
+        except FileNotFoundError:
+            return instance_list
