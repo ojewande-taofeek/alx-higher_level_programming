@@ -37,7 +37,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rec.height, 2)
         self.assertEqual(rec.x, 0)
         self.assertEqual(rec.y, 0)
-        self.assertEqual(rec.id, 5)
+        self.assertEqual(rec.id, 8)
 
     def test_rectangle_exceptions(self):
         """Test for attr values exceptions"""
