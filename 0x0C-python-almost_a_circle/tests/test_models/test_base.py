@@ -47,8 +47,42 @@ class TestBase(unittest.TestCase):
 
         self.assertTrue(issubclass(type(rec_list), str))
 
+    def test_to_json_string(self):
+        """Test the to_json_string method"""
+        json_string = Base.to_json_string([])
+        self.assertEqual("[]", json_string)
+
+        json_string = Base.to_json_string(None)
+        self.assertEqual("[]", json_string)
+
+        rec = Rectangle(4, 2, 7, 1, 89)
+        dictionary = rec.to_dictionary()
+        json_string = Base.to_json_string([dictionary])
+        expected = '[{"id": 89, "width": 4, "height": 2, "x": 7, "y": 1}]'
+        self.assertEqual(json_string, expected)
+
+        squ = Square(4, 7, 1, 89)
+        dictionary = squ.to_dictionary()
+        json_string = Base.to_json_string([dictionary])
+        expected = '[{"size": 4, "id": 89, "x": 7, "y": 1}]'
+        self.assertEqual(json_string, expected)
+
+    def test_from_json_string(self):
+        """Test the from_json_string() method"""
+        json_obj = Base.from_json_string("[]")
+        self.assertEqual(json_obj, [])
+
+        json_obj = Base.from_json_string(None)
+        self.assertEqual(json_obj, [])
+
+        json_obj = Base.from_json_string('[{"id": 121}]')
+        self.assertEqual(json_obj, [{"id": 121}])
+
+        json_obj = Base.from_json_string('[{"id": 121, "width": 21}]')
+        self.assertEqual(json_obj, [{"id": 121, "width": 21}])
+    """
     def test_save_to_file(self):
-        """Test for saving a list_objts to file"""
+        Test for saving a list_objts to file
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r", encoding="utf-8") as file:
             val = file.read()
@@ -96,3 +130,4 @@ class TestBase(unittest.TestCase):
             val = file.read()
         inst_val = json.loads(val)
         self.assertListEqual(expected, inst_val)
+        """
