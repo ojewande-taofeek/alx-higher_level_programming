@@ -6,6 +6,7 @@ from models.rectangle import Rectangle
 from models.square import Square
 from io import StringIO
 from contextlib import redirect_stdout
+import json
 
 
 class TestSquare(unittest.TestCase):
@@ -128,3 +129,36 @@ class TestSquare(unittest.TestCase):
         self.assertDictEqual(expected, output)
 
         self.assertTrue(issubclass(type(output), dict))
+
+    def test_save_to_file(self):
+        """Test for saving a list_objts to file"""
+        Square.save_to_file([])
+        with open("Square.json", "r", encoding="utf-8") as file:
+            val = file.read()
+        self.assertEqual(val, "[]")
+
+        Square.save_to_file(None)
+        with open("Square.json", "r", encoding="utf-8") as file:
+            val = file.read()
+        self.assertEqual(val, "[]")
+
+        Square.save_to_file([Square(1, 2, 3, 78)])
+        expected = [{'size': 1, 'id': 78, 'x': 2, 'y': 3}]
+        with open("Square.json", "r", encoding="utf-8") as file:
+            val = file.read()
+        inst_val = json.loads(val)
+        self.assertListEqual(expected, inst_val)
+
+    def test_create(self):
+        """Test the create() method"""
+        rec = Square.create(**{"id": 73})
+        self.assertTrue(isinstance(rec, Square))
+
+        rec = Square.create(**{"id": 73, "size": 32})
+        self.assertTrue(isinstance(rec, Square))
+
+        rec = Square.create(**{"id": 73, "size": 32, "x": 4})
+        self.assertTrue(isinstance(rec, Square))
+
+        rec = Square.create(**{"id": 73, "size": 32, "x": 4, "y": 7})
+        self.assertTrue(isinstance(rec, Square))
