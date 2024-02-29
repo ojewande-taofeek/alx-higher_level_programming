@@ -39,7 +39,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rec.height, 2)
         self.assertEqual(rec.x, 0)
         self.assertEqual(rec.y, 0)
-        self.assertEqual(rec.id, 14)
+        self.assertEqual(rec.id, 15)
 
     def test_rectangle_exceptions(self):
         """Test for attr values exceptions"""
@@ -239,7 +239,7 @@ class TestRectangle(unittest.TestCase):
 
         rec1 = Rectangle(2, 3)
         rec = Rectangle.save_to_file([rec1])
-        expected = [{'id': 25, 'width': 2, 'height': 3, 'x': 0, 'y': 0}]
+        expected = [{'id': 26, 'width': 2, 'height': 3, 'x': 0, 'y': 0}]
         with open("Rectangle.json", "r", encoding="utf-8") as file:
             val = file.read()
         inst_val = json.loads(val)
@@ -262,3 +262,13 @@ class TestRectangle(unittest.TestCase):
             val = file.read()
         inst_val = json.loads(val)
         self.assertListEqual(expected, inst_val)
+
+    def test_load_from_file(self):
+        """Test the load_from_file method"""
+        rec_inst = Rectangle.load_from_file()
+        self.assertEqual(rec_inst, [])
+
+        rec_inst = Rectangle(1, 2, 4, 5, 76)
+        Rectangle.save_to_file([rec_inst])
+        rec_load = Rectangle.load_from_file()
+        self.assertNotEqual(rec_inst, rec_load)
