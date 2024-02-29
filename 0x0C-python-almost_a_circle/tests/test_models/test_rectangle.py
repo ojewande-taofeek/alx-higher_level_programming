@@ -3,8 +3,10 @@
 import unittest
 from models.rectangle import Rectangle
 from models.base import Base
+from models.square import Square
 from io import StringIO
 from contextlib import redirect_stdout
+import json
 
 
 class TestRectangle(unittest.TestCase):
@@ -202,3 +204,61 @@ class TestRectangle(unittest.TestCase):
         rec = Rectangle.create(**{"id": 73, "width": 32,
                                "height": 12, "x": 4, "y": 7})
         self.assertTrue(isinstance(rec, Rectangle))
+
+    def test_save_to_file(self):
+        """Test for saving a list_objts to file"""
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r", encoding="utf-8") as file:
+            val = file.read()
+        self.assertEqual(val, "[]")
+
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r", encoding="utf-8") as file:
+            val = file.read()
+        self.assertEqual(val, "[]")
+
+        Square.save_to_file([])
+        with open("Square.json", "r", encoding="utf-8") as file:
+            val = file.read()
+        self.assertEqual(val, "[]")
+
+        Square.save_to_file(None)
+        with open("Square.json", "r", encoding="utf-8") as file:
+            val = file.read()
+        self.assertEqual(val, "[]")
+
+        Base.save_to_file(None)
+        with open("Base.json", "r", encoding="utf-8") as file:
+            val = file.read()
+        self.assertEqual(val, "[]")
+
+        Base.save_to_file([])
+        with open("Base.json", "r", encoding="utf-8") as file:
+            val = file.read()
+        self.assertEqual(val, "[]")
+
+        rec1 = Rectangle(2, 3)
+        rec = Rectangle.save_to_file([rec1])
+        expected = [{'id': 25, 'width': 2, 'height': 3, 'x': 0, 'y': 0}]
+        with open("Rectangle.json", "r", encoding="utf-8") as file:
+            val = file.read()
+        inst_val = json.loads(val)
+        self.assertListEqual(expected, inst_val)
+
+        rec1 = Rectangle(2, 3, 7, 4, 43)
+        rec = Rectangle.save_to_file([rec1])
+        expected = [{'id': 43, 'width': 2, 'height': 3, 'x': 7, 'y': 4}]
+        with open("Rectangle.json", "r", encoding="utf-8") as file:
+            val = file.read()
+        inst_val = json.loads(val)
+        self.assertListEqual(expected, inst_val)
+
+        rec1 = Rectangle(2, 3, 7, 4, 43)
+        rec2 = Rectangle(2, 3, 7, 4, 45)
+        rec = Rectangle.save_to_file([rec1, rec2])
+        expected = [{'id': 43, 'width': 2, 'height': 3, 'x': 7, 'y': 4},
+                    {'id': 45, 'width': 2, 'height': 3, 'x': 7, 'y': 4}]
+        with open("Rectangle.json", "r", encoding="utf-8") as file:
+            val = file.read()
+        inst_val = json.loads(val)
+        self.assertListEqual(expected, inst_val)
