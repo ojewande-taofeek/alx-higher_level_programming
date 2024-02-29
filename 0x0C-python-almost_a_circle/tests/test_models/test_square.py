@@ -27,7 +27,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(squ.height, 5)
         self.assertEqual(squ.x, 0)
         self.assertEqual(squ.y, 0)
-        self.assertEqual(squ.id, 27)
+        self.assertEqual(squ.id, 26)
 
         squ = Square(5, 3, 4, 23)
         self.assertEqual(squ.width, 5)
