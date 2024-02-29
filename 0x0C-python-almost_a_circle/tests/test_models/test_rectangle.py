@@ -37,7 +37,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rec.height, 2)
         self.assertEqual(rec.x, 0)
         self.assertEqual(rec.y, 0)
-        self.assertEqual(rec.id, 8)
+        self.assertEqual(rec.id, 11)
 
     def test_rectangle_exceptions(self):
         """Test for attr values exceptions"""
@@ -78,6 +78,13 @@ class TestRectangle(unittest.TestCase):
 
         rec_dis2 = Rectangle(2, 2, 2, 2, 5)
         expected_output = "\n\n  ##\n  ##\n"
+        with StringIO() as buffer, redirect_stdout(buffer):
+            rec_dis2.display()
+            buf_out = buffer.getvalue()
+            self.assertEqual(buf_out, expected_output)
+
+        rec_dis2 = Rectangle(2, 2, 2)
+        expected_output = "  ##\n  ##\n"
         with StringIO() as buffer, redirect_stdout(buffer):
             rec_dis2.display()
             buf_out = buffer.getvalue()
@@ -177,3 +184,21 @@ class TestRectangle(unittest.TestCase):
         self.assertDictEqual(expected, output)
 
         self.assertTrue(issubclass(type(output), dict))
+
+    def test_create(self):
+        """Test the create() method"""
+        rec = Rectangle.create(**{"id": 73})
+        self.assertTrue(isinstance(rec, Rectangle))
+
+        rec = Rectangle.create(**{"id": 73, "width": 32})
+        self.assertTrue(isinstance(rec, Rectangle))
+
+        rec = Rectangle.create(**{"id": 73, "width": 32, "height": 12})
+        self.assertTrue(isinstance(rec, Rectangle))
+
+        rec = Rectangle.create(**{"id": 73, "width": 32, "height": 12, "x": 4})
+        self.assertTrue(isinstance(rec, Rectangle))
+
+        rec = Rectangle.create(**{"id": 73, "width": 32,
+                               "height": 12, "x": 4, "y": 7})
+        self.assertTrue(isinstance(rec, Rectangle))
