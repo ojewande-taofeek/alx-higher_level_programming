@@ -2,6 +2,6 @@
 -- (database hbtn_0c_0) in your MySQL server.
 -- New row:
 -- id = 89
---name = Best School
+-- name = Best School
 -- The database name will be passed as an argument of the mysql command
-INSERT INTO first_table VALUES(89, 'Best School');
+INSERT INTO first_table(id, name) VALUES (89, 'Best School');
