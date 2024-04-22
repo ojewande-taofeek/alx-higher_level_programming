@@ -8,6 +8,7 @@ function factorial (num) {
     }
     return (num * factorial(num - 1));
   }
+  return (1);
 }
 const fact = factorial(argv[2]);
 console.log(fact);
