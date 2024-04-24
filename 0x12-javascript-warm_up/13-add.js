@@ -3,4 +3,4 @@ exports.add = function (a, b) {
   if (Number(a) && Number(b)) {
     return (a + b);
   }
-};
+}
