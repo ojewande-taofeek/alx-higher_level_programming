@@ -7,10 +7,10 @@ module.exports = class Square extends Square1 {
   charPrint (c) {
     if (c === undefined) {
       this.print();
-    } else if (c === 'C') {
+    } else {
       let count = 0;
       while (count < this.width) {
-        console.log('C'.repeat(this.width));
+        console.log(c.repeat(this.width));
         count++;
       }
     }
