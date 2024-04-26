@@ -11,18 +11,18 @@
     Results must be displayed as they are in the example below
     Your code should not be executed when imported
 """
-import MySQLdb
-from sys import argv
+if __name__ == "__main__":
+    import MySQLdb
+    from sys import argv
 
-
-conn = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
-                       passwd=argv[2], db=argv[3])
-cur = conn.cursor()
-cur.execute("SELECT * FROM states ORDER BY id ASC")
-rows = cur.fetchall()
-for row in rows:
-    for col in row:
-        if isinstance(col, str) and col.startswith('N'):
-            print(row)
-cur.close()
-conn.close()
+    conn = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                           passwd=argv[2], db=argv[3])
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    rows = cur.fetchall()
+    for row in rows:
+        for col in row:
+            if isinstance(col, str) and col.startswith('N'):
+                print(row)
+    cur.close()
+    conn.close()
