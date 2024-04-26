@@ -28,6 +28,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     first_instance = session.query(State).filter_by(id=1).first()
+    # first_instance = session.query(State).order_by(State.id).first()
+    # still works
     if (first_instance):
         print("{}: {}".format(first_instance.id, first_instance.name))
     else:
