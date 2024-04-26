@@ -32,9 +32,10 @@ if __name__ == "__main__":
         tuple_to_str = (str(row).replace('(', "").replace(')', ""))
         tuple_to_str = tuple_to_str.replace("'", "").replace(",", "")
         if input_num == 1:
-            print(tuple_to_str)
+            print(tuple_to_str, end="")
             break
         print(tuple_to_str, end=", ")
         input_num = input_num - 1
+    print()
     cur.close()
     conn.close()
