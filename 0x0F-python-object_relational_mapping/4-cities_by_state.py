@@ -20,8 +20,8 @@ if __name__ == "__main__":
                            passwd=argv[2], db=argv[3])
     cur = conn.cursor()
     cur.execute("""SELECT states.id, cities.name, states.name FROM states
-                INNER JOIN cities ON states.id=state_id
-                ORDER BY state_id ASC
+                INNER JOIN cities ON states.id=cities.state_id
+                ORDER BY cities.id ASC
                 """)
     rows = cur.fetchall()
     for row in rows:
