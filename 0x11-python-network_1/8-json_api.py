@@ -16,9 +16,9 @@ if __name__ == "__main__":
     try:
         req = requests.post("http://0.0.0.0:5000/search_user", data=payload)
         new_json = req.json()
-        if new_json:
+        if new_json.get("id"):
             print("[{}] {}".format(new_json.get("id"), new_json.get("name")))
-        else:
+        elif not new_json.get("id"):
             print("No result")
     except requests.exceptions.JSONDecodeError:
         print("Not a valid JSON")
