@@ -12,4 +12,4 @@ if __name__ == "__main__":
     req = Request(argv[1])
     with urlopen(req) as the_res:
         html = the_res.info()
-print(html["X-Request-Id"])
+print(html.get("X-Request-Id"))
