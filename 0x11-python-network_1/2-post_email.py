@@ -10,10 +10,12 @@ import urllib.parse
 
 
 if __name__ == "__main__":
-    data = urllib.parse.urlencode(argv[2])
+    val = dict()
+    val["email"] = argv[2]
+    data = urllib.parse.urlencode(val)
     data = data.encode('ascii')
     req = Request(argv[1], data)
     with urlopen(req) as the_req:
         html = the_req.read()
     utf8_dec = html.decode('utf-8')
-    print("Your email is: {}".format(utf8_dec))
+    print(utf8_dec)
