@@ -15,6 +15,6 @@ if __name__ == "__main__":
     try:
         req.raise_for_status()
     except HTTPError:
-        print(req.status_code)
+        print("Error code: {}".format(req.status_code))
     else:
         print(req.text)
