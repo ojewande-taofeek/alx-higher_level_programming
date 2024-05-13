@@ -17,5 +17,4 @@ if __name__ == "__main__":
     req = Request(argv[1], data)
     with urlopen(req) as the_req:
         html = the_req.read()
-    utf8_dec = html.decode('utf-8')
-    print(utf8_dec)
+    print(html.decode('utf-8'))
