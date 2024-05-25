@@ -21,6 +21,7 @@ if __name__ == "__main__":
         city = city[0]
         if counter == 1:
             print("{}".format(city))
+            break
         else:
             print("{}, ".format(city), end="")
         counter -= 1
