@@ -10,7 +10,7 @@ if __name__ == "__main__":
     conn = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
                            passwd=argv[2], db=argv[3])
     cur = conn.cursor()
-    if len(argv[4].split()) > 2:
+    if len(argv[4].split()) != 1:
         exit()
     cur.execute("SELECT name FROM cities \
                  WHERE state_id=(SELECT id FROM states \
@@ -18,7 +18,7 @@ if __name__ == "__main__":
     selected_cities = cur.fetchall()
     counter = cur.rowcount
     for city in selected_cities:
-        city = city[0]
+        city = str(city[0])
         if counter == 1:
             print("{}".format(city))
             break
