@@ -1,0 +1,9 @@
+#!/usr/bin/python3
+def safe_function(fct, *args):
+    new_tuple = tuple()
+    for arg in args:
+        new_tuple.append(arg)
+    print(new_tuple)
+
+if __name__ == "__main__":
+    safe_function(k, 4, 5)

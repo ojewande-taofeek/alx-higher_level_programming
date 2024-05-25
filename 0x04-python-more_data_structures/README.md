@@ -26,21 +26,21 @@ At the end of this project, you are expected to be able to [explain to anyone](h
 - What is a lambda function
 - What are the map, reduce and filter functions
 
-## Copyright - Plagiarism
-- You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.
-- You will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
-- You are not allowed to publish any content of this project.
-- Any form of plagiarism is strictly forbidden and will result in removal from the program.
+## copyright - plagiarism
+- you are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.
+- you will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
+- you are not allowed to publish any content of this project.
+- any form of plagiarism is strictly forbidden and will result in removal from the program.
 
-## Requirements
+## requirements
 
-### Python Scripts
-- Allowed editors: vi, vim, emacs
-- All your files will be interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5)
-- All your files should end with a new line
-- The first line of all your files should be exactly #!/usr/bin/python3
-- A README.md file at the root of the repo, containing a description of the repository
-- A README.md file, at the root of the folder of this project, is mandatory
-- Your code should use the pycodestyle (version 2.8.*)
-- All your files must be executable
-- The length of your files will be tested using wc
+### python scripts
+- allowed editors: vi, vim, emacs
+- all your files will be interpreted/compiled on ubuntu 20.04 lts using python3 (version 3.8.5)
+- all your files should end with a new line
+- the first line of all your files should be exactly #!/usr/bin/python3
+- a readme.md file at the root of the repo, containing a description of the repository
+- a readme.md file, at the root of the folder of this project, is mandatory
+- your code should use the pycodestyle (version 2.8.*)
+- all your files must be executable
+- the length of your files will be tested using wc

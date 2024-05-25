@@ -1,0 +1,7 @@
+elif op == "-":
+	print("{} {} {} = {}".format(first, op, second, sub(first, second)))
+elif op == "*":
+	print("{} {} {} = {}".format(first, op, second, mul(first, second)))
+elif op == "/":
+	print("{} {} {} = {}".format(first, op, second, div(first, second)))
+

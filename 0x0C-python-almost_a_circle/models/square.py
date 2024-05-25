@@ -68,10 +68,10 @@ class Square(Rectangle):
         """Returns a Square instance dict"""
         new_dict = dict()
         for key, value in self.__dict__.items():
-            if key.endswith("width"):
-                new_dict["size"] = value
-            elif key.endswith("id"):
+            if key.endswith("id"):
                 new_dict["id"] = value
+            elif key.endswith("width"):
+                new_dict["size"] = value
             elif key.endswith("x"):
                 new_dict["x"] = value
             elif key.endswith("y"):
