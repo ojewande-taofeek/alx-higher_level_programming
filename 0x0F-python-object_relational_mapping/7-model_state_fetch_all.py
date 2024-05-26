@@ -7,15 +7,14 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sys import argv
 
-
-user = argv[1]
-passwd = argv[2]
-db = argv[3]
-engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".format(
-                        user, passwd, db))
-Session = sessionmaker(bind=engine)
-session = Session()
-all_states = session.query(State).order_by(State.id).all()
-for state in all_states:
-    print("{}: {}".format(state.id, state.name))
-session.close()
+if __name__ == "__main__":
+    user = argv[1]
+    passwd = argv[2]
+    db = argv[3]
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".format(
+                            user, passwd, db))
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    for state in session.query(State).order_by(State.id):
+        print("{}: {}".format(state.id, state.name))
+    session.close()
