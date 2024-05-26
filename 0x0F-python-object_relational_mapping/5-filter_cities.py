@@ -10,7 +10,7 @@ if __name__ == "__main__":
     conn = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
                            passwd=argv[2], db=argv[3])
     cur = conn.cursor()
-    if len(argv[4].split()) != 1:
+    if len(argv[4].split()) > 2:
         exit()
     cur.execute("SELECT name FROM cities \
                  WHERE state_id=(SELECT id FROM states \
@@ -20,10 +20,11 @@ if __name__ == "__main__":
     for city in selected_cities:
         city = str(city[0])
         if counter == 1:
-            print("{}".format(city))
+            print("{}".format(city), end="")
             break
         else:
             print("{}, ".format(city), end="")
         counter -= 1
+    print()
     cur.close()
     conn.close()
