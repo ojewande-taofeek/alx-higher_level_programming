@@ -2,7 +2,8 @@
 //  prints the number of movies where the
 //  character “Wedge Antilles” is present
 const request = require('request');
-const url = 'https://swapi-api.alx-tools.com/api/films/';
+const { argv } = require('node:process');
+const url = argv[2];
 const idUrl = 'https://swapi-api.alx-tools.com/api/people/18/';
 let idCounter = 0;
 let objJson;
