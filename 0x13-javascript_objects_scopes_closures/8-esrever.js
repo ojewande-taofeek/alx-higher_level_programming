@@ -8,5 +8,7 @@ exports.esrever = function (list) {
       newList.push(list[idx]);
     }
     return newList;
+  } else {
+    return list;
   }
 };
